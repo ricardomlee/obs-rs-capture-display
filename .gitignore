@@ -37,3 +37,6 @@ server/Cargo.lock
 **/.idea/**/uiDesigner.xml
 **/.idea/**/dbnavigator.xml
 
+# binaries
+*.exe
+*.dll

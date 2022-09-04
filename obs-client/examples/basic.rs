@@ -1,4 +1,12 @@
+use clap::Parser;
 use obs_client::Capture;
+
+#[derive(Parser, Debug)]
+#[clap(author, version, about, long_about = None)]
+struct Args {
+    #[clap(short, long)]
+    window_name: String,
+}
 
 fn main() {
     simple_logger::SimpleLogger::new()
@@ -6,9 +14,11 @@ fn main() {
         .init()
         .unwrap();
 
-    let mut capture = Capture::new("Rainbow Six");
+    let args = Args::parse();
+
+    let mut capture = Capture::new(&args.window_name);
     if capture.try_launch().is_err() {
-        println!("Failed to launch the capture");
+        println!("Failed to launch the capture {}", &args.window_name);
         return;
     }
 
