@@ -18,3 +18,7 @@ wio = "0.2.2"
 [dev-dependencies]
 fps_counter = "2.0.0"
 clap = { version = "3.2.20", features = ["derive"] }
+winit = "0.27"
+wgpu = "0.13"
+pollster = "0.2.5"
+bytemuck = { version = "1.4", features = [ "derive" ] }
